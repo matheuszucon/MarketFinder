@@ -1,0 +1,99 @@
+/* Custom Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8fafc; /* gray-50 */
+    color: #1f2937; /* gray-800 */
+}
+
+/* Set a consistent height for the cards to align the grid */
+#services-grid > div {
+    min-height: 340px; /* Adjusted height for new footer layout */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Flexbox setup to structure card content */
+#services-grid .card-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Allows content to fill the card height */
+}
+
+#services-grid .card-body {
+    flex-grow: 1;
+}
+
+#services-grid .card-footer {
+    flex-shrink: 0;
+}
+
+/* Animation for cards entering the view */
+.card-enter {
+    animation: fadeIn 0.5s ease-in-out both;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Highlight style for searched items */
+.highlight {
+    box-shadow: 0 0 0 2px #3b82f6; /* blue-500 */
+    transform: scale(1.02) translateY(-4px);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+/* Custom styles for the dropdown items */
+.category-item {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1.25rem;
+    text-align: left;
+    color: #374151; /* gray-700 */
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.category-item:hover {
+    background-color: #eff6ff; /* blue-50 */
+    color: #1d4ed8; /* blue-700 */
+}
+
+.category-item.active {
+    background-color: #dbeafe; /* blue-100 */
+    color: #1e40af; /* blue-800 */
+    font-weight: 600;
+}
+
+/* Dropdown Animations */
+.dropdown-enter {
+    animation: dropdown-in 0.2s ease-out both;
+}
+.dropdown-leave {
+    animation: dropdown-out 0.2s ease-in both;
+}
+
+.fade-in {
+    animation: fade-in-simple 0.3s ease-out both;
+}
+
+@keyframes dropdown-in {
+    from { opacity: 0; transform: scale(0.95) translateY(-10px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes dropdown-out {
+    from { opacity: 1; transform: scale(1) translateY(0); }
+    to { opacity: 0; transform: scale(0.95) translateY(-10px); }
+}
+
+@keyframes fade-in-simple {
+    from { opacity: 0; transform: translateX(-10px); }
+    to { opacity: 1; transform: translateX(0); }
+}
